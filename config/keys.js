@@ -5,6 +5,7 @@ if (process.env.NODE_ENV === 'production') {
     console.log ('using prod');
     const keys = require('./prod');
     console.log('mongo_db uri', keys.mongo.URI);
+    console.log('client id', keys.google.client_id);
     module.exports = require('./prod');
 
     //console.log('mongo_db uri', keys.mongo.URI);
