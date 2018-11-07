@@ -8,6 +8,8 @@ https://radiant-mesa-48637.herokuapp.com/ | https://git.heroku.com/radiant-mesa-
  https://git.heroku.com/radiant-mesa-48637.git  <- Git Repository
  
  git
+for prod: git push heroku master
+
 
 Google OAuth Client:
 client Id: 905994347416-hpi7e1o60edcjkccarou8vffoi6hk742.apps.googleusercontent.com
