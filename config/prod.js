@@ -1,7 +1,7 @@
 module.exports =
     {
         googleClientID: process.env.GOOGLE_CLIENTID,
-        googleClientSecret: GOOGLE_CLIENT_SECRET,
+        googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,
         google:{
             client_id: process.env.GOOGLE_CLIENT_ID,
             project_id:"tutorialprod-221720",
