@@ -6,9 +6,13 @@ const keys = require('./config/keys');
 require('./models/user');
 require('./services/passport');
 
-mongoose.connect(keys.mongo.URI
+
+const mongoURI = keys.mongo.URI
     .replace('<dbuser>', keys.mongo.user)
-    .replace('<dbpassword>', keys.mongo.password));
+    .replace('<dbpassword>', keys.mongo.password);
+
+console.log('mongo URI', mongoURI);
+mongoose.connect(mongoURI);
 
 const app = express();
 app.use (
