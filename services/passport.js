@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const User = mongoose.model('users');
 
 
-console.log('mongo_db uri', keys.mongo.URI);
+//console.log('mongo_db uri', keys.mongo.URI);
 
 passport.serializeUser((user, done)=> {
     console.log('serializeUser => ', user.name);
@@ -23,7 +23,9 @@ passport.use(new GoogleStrategy(
     {
         clientID: keys.google.client_id,
         clientSecret: keys.google.client_secret,
-        callbackURL: '/auth/google/callback'
+        callbackURL: '/auth/google/callback',
+        proxy: true
+
     },
     (accessToken, refreshToken, profile, done ) => {
         console.log("access token: " + accessToken);
