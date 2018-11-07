@@ -3,7 +3,7 @@
 console.log('node env: ', process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'production') {
     console.log ('using prod');
-    require('./prod');
+    const keys = require('./prod');
     console.log('mongo_db uri', keys.mongo.URI);
     module.exports = require('./prod');
 
