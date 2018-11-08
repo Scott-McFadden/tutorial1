@@ -27,35 +27,35 @@ passport.use(new GoogleStrategy(
         proxy: true
 
     },
-    (accessToken, refreshToken, profile, done ) => {
+    async (accessToken, refreshToken, profile, done ) => {
         console.log("access token: " + accessToken);
         console.log("profile: ", profile);
-        User.findOne({googleId: profile.id})
-            .then((existingUser) => {
-                if (existingUser) {
-                    // user already exists
-                    console.log('user ', profile.displayName, ' already exists');
-                    // null - error condition
-                    // existingUser  - passed to call back
-                    done(null, existingUser);
-                }
-                else
-                {
-                    // user was not found - create it.
+        const existingUser = await User.findOne({googleId: profile.id});
 
-                    // saves user to database.
-                    new User({
-                        googleId: profile.id,
-                        email: profile.emails[0].value,
-                        name: profile.displayName
-                    })
-                        .save()
-                        .then(user => done(null, user));
-                    console.log('user ', profile.displayName, ' was created');
-                }
-            });
-
+        if (existingUser) {
+            // user already exists
+            console.log('user ', profile.displayName, ' already exists');
+            // null - error condition
+            // existingUser  - passed to call back
+            done(null, existingUser);
+        }
+        else
+        {
+            // user was not found - create it.
+            // saves user to database.
+            const user = await new User({
+                googleId: profile.id,
+                email: profile.emails[0].value,
+                name: profile.displayName
+                })
+                .save();
+            console.log('user ', profile.displayName, ' was created');
+            done(null, user);
 
         }
-    )
-);
+    }
+));
+
+
+
+
