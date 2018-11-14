@@ -3,7 +3,9 @@ const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const keys = require('./config/keys');
+const bodyParser = require('body-parser');
 require('./models/user');
+require('./models/creditCardTrans');
 require('./services/passport');
 
 
@@ -15,6 +17,8 @@ console.log('mongo URI', mongoURI);
 mongoose.connect(mongoURI);
 
 const app = express();
+// middleware
+app.use(bodyParser.json());
 app.use (
     cookieSession({
         maxAge: 30 * 24 * 60 * 60 * 1000,
@@ -36,7 +40,7 @@ app.get('/v1test', (req, res) => {
 // client secret: VH-hU2cr6S5C02D-oddvuvdV
 
 require('./routes/authRoutes')(app);
-
+require('./routes/billingRoutes')(app);
 
 const PORT = process.env.PORT   || 5000;
 

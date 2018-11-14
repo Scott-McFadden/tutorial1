@@ -17,5 +17,9 @@ module.exports =
             user: process.env.MONGO_USER,
             password: process.env.MONGO_PASSWORD
         },
-        cookieKey: process.env.COOKIE_KEY
+        cookieKey: process.env.COOKIE_KEY,
+        callbackServer: '',
+        callbackClient: '',
+        stripePublishableKey: process.env.STRIPE_PUBLIC_KEY,
+        stripeSecretKey: process.env.STRIPE_SECRET_KEY
     };

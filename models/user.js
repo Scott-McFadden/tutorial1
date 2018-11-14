@@ -4,7 +4,11 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema ({
     googleId: String,
     email: String,
-    name: String
+    name: String,
+    credits: {
+        type: Number,
+        default: 0
+    }
 
 });
 

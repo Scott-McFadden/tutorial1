@@ -54,6 +54,48 @@ m1vHNR8S8dETW7amIjSopaZp
 
 
 Concurently
+https://improvingcomputers.recurly.com/profile   
+Personal Info
+Edit Personal Info
+FULL NAME
+Edward McFadden
+EMAIL
+improvingcomputers@yahoo.com
+PASSWORD
+Change Password
+JOB FUNCTION
+Consultant
+TIME ZONE
+UTC - Default
+MONTHLY NEWSLETTER
+Subscribed   Unsubscribe
+Two-Factor Authentication
+Enable Two-Factor Auth
+STATUS
+  Disabled
+  
+Password CDE#45tgb
+
+www.stripe.com
+mcfaddenkatty1234
+pub key: pk_test_ksHrRjHp0C8EYzcC5lInR8wC
+secret key: sk_test_c9xJfLmyR1HRcBNDw8DwKRiw
+
+credit card: 4242 4242 4242 
+
+returns: 
+Object
+card: {id: "card_1DVNFNLjSkmNkqT0YD40MWWT", object: "card", address_city: null, address_country: null, address_line1: null, …}
+client_ip: "108.193.242.53"
+created: 1541959281
+email: "improvingcomputers@yahoo.com"
+id: "tok_1DVNFNLjSkmNkqT02OGmpFCJ"
+livemode: false
+object: "token"
+type: "card"
+used: false
+__proto__: Object
+
 
 
 

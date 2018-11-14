@@ -1,14 +1,21 @@
 import React, {Component} from 'react';
 import { BrowserRouter, Route} from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 import Header from './Header';
 import Footer from './Footer';
-const Dashboard = () => <h2>Dashboard</h2>
-const SurveyNew = () => <h2>SurveyNew</h2>
-const Landing = () => <h2>Landing</h2>
+import Landing from './Landing';
+import Dashboard from './Dashboard';
+import SurveyNew from './SurveyNew';
+import UserDetails from './UserDetails';
+
+
+
+
 class  App extends Component  {
     componentDidMount() {
-
+        this.props.fetchUser();
     }
     render() {
 //<!-- BrowserRouter can only handle one child -->
@@ -21,6 +28,7 @@ class  App extends Component  {
                         <Route path='/surveys/new' component={SurveyNew} />
                         <Route exact path='/surveys' component={Dashboard}/>
                         <Route exact path='/auth/google/callback' component={Landing} />
+                        <Route exact path='/userDetails' component={UserDetails} />
                         <Footer />
                     </div>
                 </BrowserRouter>
@@ -29,4 +37,4 @@ class  App extends Component  {
     };
 };
 
-export default App;
+export default connect(null, actions)(App);
